@@ -17,7 +17,7 @@ module.exports = function(content) {
 	this.cacheable && this.cacheable();
 	var query = loaderUtils.parseQuery(this.query);
 	var ext = loaderUtils.interpolateName(this, "[ext]", {
-		context: query.context || this.options.context,
+		context: query.context || this.rootContext || this.options.context,
 		content: content,
 		regExp: query.regExp
 	}).toLowerCase();
